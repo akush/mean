@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ui:start": "ng serve",
+    "ui:build": "ng build --vendor-chunk=true --statsJson",
+    "ui:build:prod": "ng build --aot --prod",
+    "ui:test": "ng test",
+    "ui:lint": "ng lint",
+    "ui:e2e": "ng e2e",
+    "start": "npm run ui:build && node server.js",
+    "start:prod": "npm run ui:build:prod && NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",

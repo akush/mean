@@ -18,7 +18,7 @@ var oneDay = 24 * 60 * 60 * 1000;
 var oneYear = oneDay * 365;
 var assetMaxAge = oneYear;
 
-app.use(express.static(path.join(__dirname, 'dist'), { maxAge: assetMaxAge, redirect: false }));
+app.use(express.static(path.join(__dirname, 'dist', 'mean'), { maxAge: assetMaxAge, redirect: false }));
 
 //Create HTTP server
 const server = http.createServer(app);
